@@ -37,4 +37,14 @@ console.log(firstPicDOMElement)
 // aggiungere la classe .active al primo elemento della gallery per renderlo visibile
 firstPicDOMElement.classList.add('active')
 
+// definire un ciclo per far avanzare le immagini nella gallery
+for (let i = 0; i < pictures.length; i++) {
+    const currentPic = pictures[i]
+}
 
+// - SE clicco sulla freccia in giù:
+//     - l'immagine corrente dovrà diventare non visibile E l'immagine
+//       successiva dovrà diventare visibile
+// - ALTRIMENTI SE clicco sulla freccia in su:
+//     - l'immagine corrente dovrà diventare non visibile E l'immagine
+//     precedente dovrà diventare visibile
