@@ -28,10 +28,10 @@ for (let i = 0; i < pictures.length; i++) {
 }
 
 // definire una variabile che seleziona tutti gli elementi della gallery
-const pictureDOMElement = document.querySelectorAll('.picture')
+const picturesDOMElement = document.querySelectorAll('.picture')
 
 // definire una variabile per selezionare solo il primo elemento della gallery
-const firstPicDOMElement = pictureDOMElement[0]
+const firstPicDOMElement = picturesDOMElement[0]
 console.log(firstPicDOMElement)
 
 // aggiungere la classe .active al primo elemento della gallery per renderlo visibile
@@ -39,9 +39,17 @@ firstPicDOMElement.classList.add('active')
 
 // definire un ciclo per far avanzare le immagini nella gallery
 for (let i = 0; i < pictures.length; i++) {
-    const currentPic = pictures[i]
-}
+    let currentPic = picturesDOMElement[i]
+    document.getElementById('button-up').addEventListener("click", changePicture)
+    document.getElementById('button-down').addEventListener("click", changePicture)
 
+    function changePicture() {
+        if(document.getElementById('button-down')){
+            let currentPic = currentPic + [i]
+            currentPic.classList.add('active')
+        }
+    }
+}
 // - SE clicco sulla freccia in giù:
 //     - l'immagine corrente dovrà diventare non visibile E l'immagine
 //       successiva dovrà diventare visibile
