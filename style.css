@@ -4,7 +4,9 @@
 }
 
 img {
-    max-width: 800px;
+    object-fit: cover;
+    width: 800px;
+    height: 300px;
 }
 
 .container {
@@ -32,4 +34,12 @@ img {
     bottom: 10px;
     left: 50%;
     transform: translate(-50%,0);
+}
+
+.picture {
+    display: none;
+}
+
+.active {
+    display: inline-block;
 }
