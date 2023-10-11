@@ -34,35 +34,54 @@ let currentSlide = picturesDOMElement[currentIndex]
 // aggiungere la classe .active all'elemento della gallery corrente per renderlo visibile
 currentSlide.classList.add('active')
 
-document.getElementById('button-down').addEventListener("click", changePicture)
-function changePicture() {
-    
-    currentSlide = picturesDOMElement[currentIndex]
-    currentSlide.classList.remove('active')
-
-    currentIndex = currentIndex + 1 
-    currentSlide = picturesDOMElement[currentIndex]
-    currentSlide.classList.add('active')
-    
-    console.log(currentSlide, currentIndex)
-}
-
-document.getElementById('button-up').addEventListener("click", changePictureBack)
-function changePictureBack() {
-    
-    currentSlide = picturesDOMElement[currentIndex]
-    currentSlide.classList.remove('active')
-
-    currentIndex = currentIndex - 1 
-    currentSlide = picturesDOMElement[currentIndex]
-    currentSlide.classList.add('active')
-    
-    console.log(currentSlide, currentIndex)
-}
-
 // - SE clicco sulla freccia in giù:
 //     - l'immagine corrente dovrà diventare non visibile E l'immagine
 //       successiva dovrà diventare visibile
 // - ALTRIMENTI SE clicco sulla freccia in su:
 //     - l'immagine corrente dovrà diventare non visibile E l'immagine
 //     precedente dovrà diventare visibile
+
+document.getElementById('button-down').addEventListener("click", changePicture)
+function changePicture() {
+    
+    
+    if (currentIndex < pictures.length) {
+        currentSlide = picturesDOMElement[currentIndex]
+        currentSlide.classList.remove('active')
+        currentIndex = currentIndex + 1 
+        currentSlide = picturesDOMElement[currentIndex]
+        currentSlide.classList.add('active')
+
+        console.log(currentSlide, currentIndex)
+
+    } else if (currentIndex == pictures.length) {
+        currentIndex = 0
+        currentSlide = picturesDOMElement[currentIndex]
+        currentSlide.classList.add('active')
+    }
+}    
+
+
+document.getElementById('button-up').addEventListener("click", changePictureBack)
+function changePictureBack() {
+
+    if (currentIndex < pictures.length) {
+        currentSlide = picturesDOMElement[currentIndex]
+        currentSlide.classList.remove('active')
+        currentIndex = currentIndex - 1 
+        currentSlide = picturesDOMElement[currentIndex]
+        currentSlide.classList.add('active')
+
+        console.log(currentSlide, currentIndex)
+
+    } else if (currentIndex = 0) {
+        currentSlide = picturesDOMElement[currentIndex]
+        currentSlide.classList.remove('active')
+        currentIndex = 4 
+        currentSlide = picturesDOMElement[currentIndex]
+        currentSlide.classList.add('active')
+    }
+}        
+    
+    console.log(currentSlide, currentIndex)
+
