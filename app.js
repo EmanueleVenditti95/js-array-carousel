@@ -37,9 +37,16 @@ currentSlide.classList.add('active')
 document.getElementById('button-down').addEventListener("click", changePicture)
 
 function changePicture() {
-       
-    }
-console.log(currentSlide, currentIndex)
+    currentIndex = 0
+    currentSlide = picturesDOMElement[currentIndex]
+    currentSlide.classList.remove('active')
+
+    currentIndex += 1 
+    currentSlide = picturesDOMElement[currentIndex]
+    currentSlide.classList.add('active')
+    
+    console.log(currentSlide, currentIndex)
+}
 
 // - SE clicco sulla freccia in giù:
 //     - l'immagine corrente dovrà diventare non visibile E l'immagine
