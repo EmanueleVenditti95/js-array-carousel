@@ -45,7 +45,7 @@ document.getElementById('button-down').addEventListener("click", changePicture)
 function changePicture() {
     
     
-    if (currentIndex < pictures.length) {
+    if (currentIndex < pictures.length - 1) {
         currentSlide = picturesDOMElement[currentIndex]
         currentSlide.classList.remove('active')
         currentIndex = currentIndex + 1 
@@ -54,7 +54,9 @@ function changePicture() {
 
         console.log(currentSlide, currentIndex)
 
-    } else if (currentIndex == pictures.length) {
+    } else if (currentIndex == pictures.length -1) {
+        currentSlide = picturesDOMElement[currentIndex]
+        currentSlide.classList.remove('active')
         currentIndex = 0
         currentSlide = picturesDOMElement[currentIndex]
         currentSlide.classList.add('active')
@@ -65,7 +67,7 @@ function changePicture() {
 document.getElementById('button-up').addEventListener("click", changePictureBack)
 function changePictureBack() {
 
-    if (currentIndex < pictures.length) {
+    if (currentIndex > 0) {
         currentSlide = picturesDOMElement[currentIndex]
         currentSlide.classList.remove('active')
         currentIndex = currentIndex - 1 
@@ -74,10 +76,11 @@ function changePictureBack() {
 
         console.log(currentSlide, currentIndex)
 
-    } else if (currentIndex = 0) {
+    } else if (currentIndex === 0) {
+        currentIndex = 0
         currentSlide = picturesDOMElement[currentIndex]
         currentSlide.classList.remove('active')
-        currentIndex = 4 
+        currentIndex = 4
         currentSlide = picturesDOMElement[currentIndex]
         currentSlide.classList.add('active')
     }
