@@ -35,13 +35,25 @@ let currentSlide = picturesDOMElement[currentIndex]
 currentSlide.classList.add('active')
 
 document.getElementById('button-down').addEventListener("click", changePicture)
-
 function changePicture() {
-    currentIndex = 0
+    
     currentSlide = picturesDOMElement[currentIndex]
     currentSlide.classList.remove('active')
 
-    currentIndex += 1 
+    currentIndex = currentIndex + 1 
+    currentSlide = picturesDOMElement[currentIndex]
+    currentSlide.classList.add('active')
+    
+    console.log(currentSlide, currentIndex)
+}
+
+document.getElementById('button-up').addEventListener("click", changePictureBack)
+function changePictureBack() {
+    
+    currentSlide = picturesDOMElement[currentIndex]
+    currentSlide.classList.remove('active')
+
+    currentIndex = currentIndex - 1 
     currentSlide = picturesDOMElement[currentIndex]
     currentSlide.classList.add('active')
     
